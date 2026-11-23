@@ -20,3 +20,16 @@ def profile(name):
 @app.route("/post/<int:post_id>")
 def post(post_id):
     return f"Postingan #{post_id}"
+
+# Route dengan method POST
+@app.route("/submit", methods=["GET", "POST"])
+def submit():
+    if request.method == "POST":
+        nama = request.form.get("nama")
+        nama = escape(nama)
+        return f"<h1>Halo, {nama}!</h1><a href='/submit'>Kembali</a>"
+
+    return render_template("index.html")
+
+if _name_ == "_main_":
+    app.run(debug=True)

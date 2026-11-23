@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<p>Hello, World!</p> <img src='https://www.pixelstalk.net/wp-content/uploads/2016/08/Disney-Tangled-Backgrounds-1240x654.jpg' />"
 
 if __name__ == "__main__":
     app.run(debug=True)
